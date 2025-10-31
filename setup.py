@@ -6,7 +6,7 @@ setup(
     description='A useless python lybrary',
     url='https://github.com/O9Creeps/merl',
     author='O9CreeperBoi',
-    author_email='not provided',    
+    author_email='example@example.com',    
     license='MIT',
     packages=['merl'],
     install_requires=[],
