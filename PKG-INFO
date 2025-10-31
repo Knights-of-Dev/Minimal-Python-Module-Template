@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: merl
+Version: 1.0.0
+Summary: A useless python module, implementing Merl from Minecraft's help center.
+Home-page: https://github.com/O9Creeps/merl
+Author: O9Creeps
+Author-email: email@example.com
+License: MIT
+Keywords: merl, useless, python
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.4
+Description-Content-Type: text/markdown
