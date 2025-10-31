@@ -1,1 +1,1 @@
-from . import merl
+from merl import *
