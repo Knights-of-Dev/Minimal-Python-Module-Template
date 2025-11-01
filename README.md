@@ -1,14 +1,34 @@
 # merl
-An open-source useless python library. Developed using the code.org IDE, because why not.
+An open-source useless python library that emulates (not fetches) some of Merl's most popular responses and answers. Developed using the code.org IDE, because why not.
 Use the following line on Windows to import merl:
 ```
 pip install merl
 ```
-If that doesn't work, then gimmie some time I gotta figure it out.
+If that doesn't work, then gimmie some time to fix my files.
 
 ## Functions I want you to use
 ### send(pr) -- USE THIS
 Sends 'pr' to Merl where 'pr' is a string. The response automatically prints out in the terminal/IDE, so don't resize the window to less than the width of 40 characters wide. Otherwise the unprinting function breaks.
+
+---
+
+## Modes
+**NOTE: THESE FEATURES DO NOT WORK ON ACTUAL MERL, JUST PYTHON MERL!**
+### copyInput
+To have Merl copy standard input to output, type "copyInput" in the send function, like this:
+
+```Python
+merl.send("copyInput")
+```
+This means that from now on, Merl will re-print whatever you put in send() until you tell them to stop using this:
+
+### resetInputs
+Simply type "resetInputs" to have them go back to normal! Like this:
+
+```Python
+merl.send("resetInputs")
+```
+
 
 ---
 
@@ -21,4 +41,4 @@ Keep each 'msg' short, like Merl!
 ### replyPrint(prompt)
 Where 'prompt' is a string. This makes Merl reply whatever, based on what you put in.
 The reason why there are 2 "send" functions is because it has Merl check a thing or two before actually doing the reply checks, too.
-Expect "I don't know." to show up more than once. With the exception of your system's time being between 9 AM and 4 PM, of course, because then you get a high traffic message more than half the time!
+Expect "I don't know." to show up more than once. With the exception of your system's time being between 9 AM and 4 PM, of course, because then you get a high traffic message more than actual answers! (If that's what you could call them)
