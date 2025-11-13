@@ -6,11 +6,11 @@ pip install merl
 ```
 If that doesn't work, then gimmie some time to fix my files.
 
-## Functions I want you to use
-### send(pr) -- USE THIS
+## The function I want you to use
+### send(pr)
 Sends 'pr' to Merl where 'pr' is a string. The response automatically prints out in the terminal/IDE, so don't resize the window to less than the width of 40 characters wide. Otherwise the unprinting function breaks.
 
----
+
 
 ## Modes
 **NOTE: THESE FEATURES DO NOT WORK ON ACTUAL MERL, JUST PYTHON MERL!**
@@ -30,7 +30,7 @@ merl.send("resetInputs")
 ```
 
 
----
+
 
 ## Functions that are supposed to be hidden
 ### printanim(msg)
