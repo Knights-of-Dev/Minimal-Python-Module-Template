@@ -6,11 +6,17 @@ pip install merl
 ```
 If that doesn't work, then gimmie some time to fix my files.
 
-## The function I want you to use
+## Functions I want you to use
 ### send(pr)
 Sends 'pr' to Merl where 'pr' is a string. The response automatically prints out in the terminal/IDE, so don't resize the window to less than the width of 40 characters wide. Otherwise the unprinting function breaks.
 
+### sendRaw(pr)
+Sends 'pr' to Merl where 'pr' is a string. The response is returned as a string, so its nicely paired with a *print()* statement, like this:
 
+```Python
+print(merl.sendRaw("Hello"))
+```
+Because it has no unprinting function, then this is less likely to break the terminal.
 
 ## Modes
 **NOTE: THESE FEATURES DO NOT WORK ON ACTUAL MERL, JUST PYTHON MERL!**
