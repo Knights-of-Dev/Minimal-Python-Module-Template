@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='merl',
-    version='0.1.1',    
+    version='0.1.2',    
     description='A useless python lybrary',
     url='https://github.com/O9Creeps/merl',
     author='O9CreeperBoi',
