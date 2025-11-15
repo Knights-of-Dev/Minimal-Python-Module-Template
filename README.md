@@ -16,7 +16,7 @@ Sends 'pr' to Merl where 'pr' is a string. The response is returned as a string,
 ```Python
 print(merl.sendRaw("Hello"))
 ```
-Because it has no unprinting function, then this is less likely to break the terminal.
+Because it has no unprinting function, this function is less likely to break the terminal.
 
 ## Modes
 **NOTE: THESE FEATURES DO NOT WORK ON ACTUAL MERL, JUST PYTHON MERL!**
