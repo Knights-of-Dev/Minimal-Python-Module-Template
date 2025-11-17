@@ -2,14 +2,25 @@
 An open-source useless python library that emulates (not fetches) some of Merl's most popular responses and answers. This may include some bonus ones that Merl does not actually say in the real thing, but come on who doesn't love a Minecraft Movie easter egg? Developed using the code.org IDE, because why not.
 Use the following line on Windows to import merl:
 ```
-C:\Users\Example> pip install merl
+pip install merl
 ```
 If it says that 'pip.exe' is blocked by group policy, try this:
 ```
-C:\Users\Example> python -m pip install --user merl
+python -m pip install --user merl
 ```
 If THAT doesn't work, then give me some time to either fix my files or find another workaround.
 
+---
+To update Merl:
+```
+pip install --upgrade merl
+```
+Or do:
+```
+python -m pip install --upgrade --user merl
+```
+
+---
 ## Functions I want you to use
 ### send(pr)
 Sends 'pr' to Merl where 'pr' is a string. The response automatically prints out in the terminal/IDE, so don't resize the window to less than the width of 40 characters wide. Otherwise the unprinting function breaks.
@@ -22,6 +33,7 @@ print(merl.sendRaw("Hello"))
 ```
 Because it has no unprinting function, this function is less likely to break the terminal.
 
+---
 ## Modes
 **NOTE: THESE FEATURES DO NOT WORK ON ACTUAL MERL, JUST PYTHON MERL!**
 ### copyInput
@@ -41,7 +53,7 @@ merl.send("resetInputs")
 
 
 
-
+---
 ## Functions that are supposed to be hidden
 ### printanim(msg)
 Prints 'msg' where 'msg' is a string. If 'msg' does not have spaces, then it all prints at once. Else, it prints word-by-word.
