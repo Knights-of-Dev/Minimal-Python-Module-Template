@@ -2,9 +2,13 @@
 An open-source useless python library that emulates (not fetches) some of Merl's most popular responses and answers. This may include some bonus ones that Merl does not actually say in the real thing, but come on who doesn't love a Minecraft Movie easter egg? Developed using the code.org IDE, because why not.
 Use the following line on Windows to import merl:
 ```
-pip install merl
+C:\Users\Example> pip install merl
 ```
-If that doesn't work, then gimmie some time to fix my files.
+If it says that 'pip.exe' is blocked by group policy, try this:
+```
+C:\Users\Example> python -m pip install --user merl
+```
+If THAT doesn't work, then give me some time to either fix my files or find another workaround.
 
 ## Functions I want you to use
 ### send(pr)
