@@ -4,7 +4,7 @@ Use the following line on Windows to import merl:
 ```
 pip install merl
 ```
-If it says that 'pip.exe' is blocked by group policy, try this:
+If it says that 'pip.exe is blocked by group policy', try this:
 ```
 python -m pip install --user merl
 ```
@@ -51,6 +51,18 @@ Simply type "resetInputs" to have them go back to normal! Like this:
 merl.send("resetInputs")
 ```
 
+---
+## Example Program using send()
+This is an exaple program (used by me) to test Merl's capabilities and features:
+```Python
+import merl
+a = ""
+
+while a != "!leave":
+  a = input("<you> ")
+  merl.send(a)
+```
+
 
 
 ---
@@ -61,6 +73,6 @@ If 'msg' spans longer than the terminal's horizontal size, then it will start du
 Keep each 'msg' short, like Merl!
 
 ### replyPrint(prompt)
-Where 'prompt' is a string. This makes Merl reply whatever, based on what you put in.
-The reason why there are 2 "send" functions is because it has Merl check a thing or two before actually doing the reply checks, too.
+Where 'prompt' is a string. This forces Merl to reply whatever, based on what you put in.
+The reason why there are 3 "send" functions is because it has Merl check a thing or two before actually doing the reply checks, too.
 Expect "I don't know." to show up more than once. With the exception of your system's time being between 9 AM and 4 PM, of course, because then you get a high traffic message more than actual answers! (If that's what you could call them)
