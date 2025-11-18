@@ -2,16 +2,29 @@
 THANK YOU FOR IMPORTING THE MOST USELESS MODULE EVER CREATED!
 I hope you hate it!
 
-p.s. Hi, PhoenixSC!
 ---O9CreeperBoi
+
+p.s. Hi, PhoenixSC!
 """
 
 import time
 import random
+import re
 
 CURSOR_UP = "\033[1A"
 CLEAR = "\x1b[2K"
 CLEAR_LINE = CURSOR_UP + CLEAR
+
+match = 0
+global result
+result = 0
+restring = ""
+
+# math!
+num = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty", "twenty one", "twenty two", "twenty three", "twenty four", "twenty five", "twenty six", "twenty seven", "twenty eight", "twenty nine", "thirty", "thirty one", "thirty two", "thirty three", "thirty four", "thirty five", "thirty six", "thirty seven", "thirty eight", "thirty nine", "fourty", "fourty one", "fourty two", "fourty three", "fourty four", "fourty five", "fourty six", "fourty seven", "fourty eight", "fourty nine", "fifty", "fifty one", "fifty two", "fifty three", "fifty four", "fifty five", "fifty six", "fifty seven"] # 57
+ope = ["plus", "minus", "times", "divided by"]
+# LMAO merl can only count up to 57 thats crazy.
+
 
 # Oops! Can't have users cursing in MY module!
 # We don't want to have a repeat of Project Gray Kiwi, now do we?
@@ -34,12 +47,19 @@ copyin = ["i dont know", "i don't know", "language that vi", "ing higher traff",
 
 mine = ["cho minecr", "int minecr", "minecraft!", "say minecr", "ne plus tw"] # im such a troll
 
-# don't ask what this does.
-m = 0
+# hey merl what can you do
+capable = ["you do anyt", "capab", "able", "calcul", "at can you"]
 
-# every single reply possible
+# don't ask what these do.
+m = 0
+num_pattern = "|".join(num)
+ope_pattern = "|".join(ope)
+pattern = rf"\b({num_pattern})\s+((?:{ope_pattern}))\s+({num_pattern})\b"
+
+# every single reply possible that is not math related
 reply = {
-  "test":["This is a test for ", "Merl's dialogue. This is still in progress."],
+  "test":["This is a test for ", "Merl's dialogue. I can add and subtract!"],
+  "cap":["I'm glad you asked! I can", " do basic math with numbers ", "up to fifty seven now. Go on, give ", "me a problem!"],
   "busy":["We are currently experiencing higher ", "traffic than expected. Please wait ", "a moment and resend your last ", "message."],
   "movie":["No. No no no. I am not here to talk ", "about the Minecraft Movie. Can you ", "ask me anything besides that?"],
   "copy":["I'm sorry, but I am designed to be a ", "guide for 'Minecraft', and not to be ", "copied. Can I help you with anything ", "else?"],
@@ -53,6 +73,39 @@ reply = {
   "idk2":["I don't know. Can I help you with a ", "question related to Minecraft?"],
   "englishOnly":["I can only provide support in ", "English right now. Can I help ", "you with a question related ", "to 'Minecraft'?"]
 }
+
+def checkmath(inp: str):
+  num_map = {word: value for word, value in zip(num, range(len(num)))}
+  match = re.search(pattern, inp)
+  global restring
+  if match:
+    num1_word = match.group(1)
+    ope_word = match.group(2)
+    num2_word = match.group(3)
+
+    num1 = num_map[num1_word]
+    num2 = num_map[num2_word]
+    global result
+    result = None
+
+    # calculation times uh9gsigohdfbiushegtfd equals great job thats right!!!
+    if ope_word == "plus":
+        result = num1 + num2
+        restring = f"{num1} plus {num2} is {result}."
+    elif ope_word == "minus":
+        result = num1 - num2
+        restring = f"{num1} minus {num2} is {result}."
+    elif ope_word == "times":
+        result = num1 * num2
+        restring = f"{num1} times {num2} is {result}."
+    elif ope_word == "divided by":
+        if num2 != 0:
+            result = num1 / num2
+            restring = f"{num1} divided by {num2} equals {result}."
+        else:
+            restring = "It is not possible to divide by zero."
+    else:
+      restring = ""
 
 
 def replyMsg(cate: str):
@@ -73,6 +126,10 @@ def printanim(msg: str):
 
 # this is what you send to nerl if you are simply pimply
 def sendRaw(prompt: str):
+  global result
+  result = None
+  checkmath(prompt)
+  match = 0
   global m
   if prompt == "copyInput":
     m = 1
@@ -93,6 +150,7 @@ def sendRaw(prompt: str):
     else:
       if any(sub.lower() in prompt.lower() for sub in copyin): return replyMsg("copy")
       elif any(sub.lower() in prompt.lower() for sub in banned): return replyMsg("languageViolation")
+      elif any(sub.lower() in prompt.lower() for sub in capable): return replyMsg("cap")
       elif any(sub.lower() in prompt.lower() for sub in future): return replyMsg("update")
       elif any(sub.lower() in prompt.lower() for sub in pb): return replyMsg("pb")
       elif any(sub.lower() in prompt.lower() for sub in help): return replyMsg("iCanHelp") # can you really?
@@ -100,10 +158,14 @@ def sendRaw(prompt: str):
       elif any(sub.lower() in prompt.lower() for sub in cj): return replyMsg("movie")
       elif any(sub.lower() in prompt.lower() for sub in greet): return replyMsg("greet")
       else:
-        g = random.randint(0,4)
-        if g == 1: return replyMsg("idk2")
-        elif g == 2: return replyMsg("englishOnly")
-        else: return replyMsg("idk") # ha ha!
+        if result != None:
+          return restring
+        else:
+          g = random.randint(0,7)
+          if g == 1: return replyMsg("idk2")
+          elif g == 2: return replyMsg("englishOnly")
+          elif g == 5: return "I can't help with that." # seriously this one is new.
+          else: return replyMsg("idk") # ha ha!
 
 
 # this is what you send to berl if you are fancy pantsy
@@ -124,6 +186,9 @@ def send(pr: str):
 
 # tree of importance
 def replyPrint(prompt: str):
+  global result
+  result = None
+  checkmath(prompt)
   time_tuple = time.localtime()
   hour = time_tuple.tm_hour
   global pb, banned, greet, help, cj, copyin
@@ -134,6 +199,8 @@ def replyPrint(prompt: str):
       for x in range(len(reply["copy"])): printanim(reply["copy"][x])
     elif any(sub.lower() in prompt.lower() for sub in banned):
       for x in range(len(reply["languageViolation"])): printanim(reply["languageViolation"][x])
+    elif any(sub.lower() in prompt.lower() for sub in capable):
+      for x in range(len(reply["cap"])): printanim(reply["cap"][x])
     elif any(sub.lower() in prompt.lower() for sub in future):
       for x in range(len(reply["update"])): printanim(reply["update"][x])
     elif any(sub.lower() in prompt.lower() for sub in pb):
@@ -147,15 +214,21 @@ def replyPrint(prompt: str):
     elif any(sub.lower() in prompt.lower() for sub in greet):
       for x in range(len(reply["greet"])): printanim(reply["greet"][x])
     else:
-      g = random.randint(0,4)
-      if g == 1:
-        for x in range(len(reply["idk2"])): printanim(reply["idk2"][x])
-      elif g == 2:
-        for x in range(len(reply["englishOnly"])): printanim(reply["englishOnly"][x])
+      if result != None:
+        printanim(restring)
       else:
-        # The statement to end all statements.
-        # Behold. The one, the legend, the answer supreme...
-        printanim("I don't know.")
-        # This won't change, either.
+        g = random.randint(0,7)
+        if g == 1:
+          for x in range(len(reply["idk2"])): printanim(reply["idk2"][x])
+        elif g == 2:
+          for x in range(len(reply["englishOnly"])): printanim(reply["englishOnly"][x])
+        elif g == 3:
+          printanim("I can't help with that.")
+          # this one is new. they actually said this and idk why.
+        else:
+          # The statement to end all statements.
+          # Behold. The one, the legend, the answer supreme...
+          printanim("I don't know.")
+          # This won't change, either.
     
 
