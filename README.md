@@ -1,7 +1,14 @@
 # Minimal Python Module Template
 Add your documentation here!
 
-Quick formatting guide:
+**Quick note: DO NOT CHANGE THE GITHUB WORKFLOWS FOLDER AT ALL, OR .GITIGNORE!!**
+
+
+
+
+
+
+Formatting refs:
 
 ---
 
