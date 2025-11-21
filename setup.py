@@ -1,14 +1,14 @@
 from setuptools import setup
 
 setup(
-    name='merl',
-    version='0.1.3',    
-    description='A useless python library, aiming to emulate (not fetch/embed) the Merl experience found on the minecraft.net help page! Again, this is NOT the real Merl, but a really close copy! If you use it enough!',
-    url='https://github.com/O9Creeps/merl',
-    author='O9CreeperBoi',
+    name='moduleName',
+    version='0.1.0',    
+    description='description here. each time you want to update your module, make sure the version above doesnt already exist!',
+    url='GitHub Repo URL here',
+    author='author. dont change the below if you dont want to get doxxed somehow. if your module uses only built-in ones, dont change install_requires please.',
     author_email='example@example.com',    
     license='MIT',
-    packages=['merl'],
+    packages=['moduleName'],
     install_requires=[],
 
     classifiers=[
